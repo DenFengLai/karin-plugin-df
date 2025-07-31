@@ -1,0 +1,27 @@
+{
+  "Poke": {
+    "switch": true,
+    "type": "all",
+    "blackList": []
+  },
+  "Picture": {
+    "switch": true,
+    "direct": false
+  },
+  "sendMaster": {
+    "switch": true,
+    "cd": 60,
+    "master": "first",
+    "botid": "",
+    "replyId": true,
+    "banWords": [],
+    "banUser": [],
+    "banGroup": []
+  },
+  "Summary": {
+    "switch": false,
+    "type": "yiyan",
+    "yiyanApi": "",
+    "textList": []
+  }
+}

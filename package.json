@@ -1,0 +1,70 @@
+{
+  "name": "karin-plugin-df",
+  "version": "1.0.0",
+  "author": "DengFengLai",
+  "type": "module",
+  "description": "df-plugin for Karin",
+  "homepage": "https://github.com/DenFengLai/karin-plugin-df",
+  "bugs": {
+    "url": "https://github.com/DenFengLai/karin-plugin-df/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DenFengLai/karin-plugin-df.git"
+  },
+  "scripts": {
+    "app": "node dist/app.js",
+    "build": "tsup",
+    "dev": "cross-env EBV_FILE=\"development.env\" node --import tsx src/app.ts",
+    "pub": "npm publish --access public"
+  },
+  "main": "dist/index.js",
+  "devDependencies": {
+    "@karinjs/adapter-icqq": "^1.5.15",
+    "@types/express": "^5.0.3",
+    "@types/lodash": "^4.17.20",
+    "@types/node": "^20.19.9",
+    "cross-env": "^7.0.3",
+    "eslint": "^9.32.0",
+    "icqq": "npm:@icqqjs/icqq@^1.7.0",
+    "neostandard": "^0.11.9",
+    "node-karin": "^1.10.20",
+    "tsup": "^8.5.0",
+    "tsx": "^4.20.3",
+    "typescript": "^5.8.3"
+  },
+  "karin": {
+    "main": "src/index.ts",
+    "web": "dist/web.config.js",
+    "ts-web": "src/web.config.ts",
+    "apps": [
+      "lib/apps"
+    ],
+    "ts-apps": [
+      "src/apps"
+    ],
+    "static": [
+      "resources"
+    ],
+    "files": [
+      "config",
+      "data",
+      "resources"
+    ]
+  },
+  "files": [
+    "/dist/**/*.js",
+    "/dist/**/*.d.ts",
+    "/config/*.json",
+    "resources",
+    "!dist/app.js"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org"
+  },
+  "dependencies": {
+    "node-fetch": "^3.3.2",
+    "ulid": "^3.0.1"
+  }
+}
