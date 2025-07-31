@@ -1,0 +1,36 @@
+{
+  "release-type": "node",
+  "pull-request-title-pattern": "🚀 build${scope}: release${component} ${version}",
+  "changelog-sections": [
+    {
+      "type": "feat",
+      "section": "✨ Features",
+      "hidden": false
+    },
+    {
+      "type": "fix",
+      "section": "🐛 Bug Fixes",
+      "hidden": false
+    },
+    {
+      "type": "docs",
+      "section": "📝 Documentation",
+      "hidden": false
+    },
+    {
+      "type": "chore",
+      "section": "🔧 Chores",
+      "hidden": false
+    },
+    {
+      "type": "refactor",
+      "section": "♻️ Refactor",
+      "hidden": false
+    },
+    {
+      "type": "test",
+      "section": "✅ Tests",
+      "hidden": false
+    }
+  ]
+}
