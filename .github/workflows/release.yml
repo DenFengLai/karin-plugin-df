@@ -1,5 +1,6 @@
 name: Release and Publish # 发布和发布的工作流程名称
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
@@ -13,17 +14,20 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # 使用 release-please-action@v4 动作
-      - uses: googleapis/release-please-action@v4
+      - name: 📝 使用 release-please-action 发布检查
+        uses: googleapis/release-please-action@v4
         id: release
         with:
           # 设置发布类型为 Node.js
           release-type: node
           config-file: .release-please-config.json
       # 检出代码
-      - uses: actions/checkout@v4
+      - name: 🛠️ 检出代码
+        uses: actions/checkout@v4
         if: ${{ steps.release.outputs.release_created }}
       # 设置 Node.js 环境
-      - uses: actions/setup-node@v4
+      - name: ⚙️ 设置 Node.js 环境
+        uses: actions/setup-node@v4
         with:
           # 设置 Node.js 版本
           node-version: 20
@@ -31,16 +35,25 @@ jobs:
           registry-url: https://registry.npmjs.org
         if: ${{ steps.release.outputs.release_created }}
       # 安装依赖
-      - run: npm install -P
+      - name: 📦 配置 PNPM 环境并安装依赖
+        uses: pnpm/action-setup@v4
+        env: 
+          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
+        with:
+          version: 9.13.2
+          run_install: true
         if: ${{ steps.release.outputs.release_created }}
       # 编译
-      - run: npm run build
+      - name: 🔧 编译源代码
+        run: pnpm build
         if: ${{ steps.release.outputs.release_created }}
       # 删除开发依赖
-      - run: npm pkg delete devDependencies
+      - name: 🧹 删除开发依赖
+        run: pnpm pkg delete devDependencies
         if: ${{ steps.release.outputs.release_created }}
-      # 发布带npm
-      - run: npm run pub
+      # 发布到npm
+      - name: 🚀 发布至 NPM
+        run: pnpm pub
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
         if: ${{ steps.release.outputs.release_created }}
