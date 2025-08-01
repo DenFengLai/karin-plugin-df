@@ -5,3 +5,28 @@
 [![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
 [![Gitmoji](https://img.shields.io/badge/gitmoji-%20😜%20😍-FFDD67.svg?style=flat-square)](https://gitmoji.dev)
 [![License](https://img.shields.io/github/license/DenFengLai/karin-plugin-df.svg)](LICENSE)
+
+适用于Karin系列框架的拓展插件
+
+> [Yunzai版](https://github.com/DenFengLai/DF-Plugin)
+
+## 🛠️ 安装插件
+
+- 使用`包管理器`
+
+```sh
+pnpm add karin-plugin-df@latest -w
+```
+
+## ⚙️ 配置
+
+启动Karin后使用WebUi中进行配置.
+
+## 💬 免责声明
+
+本项目仅供学习使用，请勿用于商业等用途；
+项目内资源均来源于网络，如侵犯了您的权益请联系项目开发者进行删除.
+
+## 📄 许可证
+
+[MIT License](./LICENSE)

@@ -1,6 +1,14 @@
 {
   "release-type": "node",
   "pull-request-title-pattern": "🚀 build${scope}: release${component} ${version}",
+  "extra-commit-parser": {
+    "headerPattern": "^(?:[\\p{Emoji_Presentation}\\p{Extended_Pictographic}]+\\s*)?(?<type>feat|fix|chore|build|docs|style|refactor|test|perf)(\\((?<scope>[^)]+)\\))?: (?<description>.+)$",
+    "headerCorrespondence": [
+      "type",
+      "scope",
+      "description"
+    ]
+  },
   "changelog-sections": [
     {
       "type": "feat",
