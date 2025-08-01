@@ -38,7 +38,7 @@
     "web": "dist/web.config.js",
     "ts-web": "src/web.config.ts",
     "apps": [
-      "lib/apps"
+      "dist/apps"
     ],
     "ts-apps": [
       "src/apps"
