@@ -1,14 +1,7 @@
 {
+  "$schema": "https://raw.githubusercontent.com/googleapis/release-please/main/schemas/config.json",
   "release-type": "node",
   "pull-request-title-pattern": "🚀 build${scope}: release${component} ${version}",
-  "extra-commit-parser": {
-    "headerPattern": "^(?:[\\p{Emoji}\\p{Extended_Pictographic}]+\\s*)?(?<type>feat|fix|chore|build|docs|style|refactor|test|perf)(?:\\((?<scope>[^)]+)\\))?: (?<description>.+)$",
-    "headerCorrespondence": [
-      "type",
-      "scope",
-      "description"
-    ]
-  },
   "changelog-sections": [
     {
       "type": "feat",
@@ -45,5 +38,19 @@
       "section": "✅ Tests",
       "hidden": false
     }
-  ]
+  ],
+  "packages": {
+    ".": {
+      "release-type": "node",
+      "extra-commit-parser": {
+        "headerPattern": "^(:[a-z_]+:)?\\s*(?<type>feat|fix|chore)(\\((?<scope>[^)]+)\\))?: (?<description>.+)$",
+        "headerCorrespondence": [
+          "emoji",
+          "type",
+          "scope",
+          "description"
+        ]
+      }
+    }
+  }
 }
