@@ -38,6 +38,7 @@ jobs:
       - name: 📦 配置 PNPM 环境并安装依赖
         uses: pnpm/action-setup@v4
         env: 
+          NPM_CONFIG_REGISTRY: https://registry.npmjs.org
           NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
         with:
           version: 9.13.2

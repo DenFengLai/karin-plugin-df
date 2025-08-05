@@ -24,7 +24,8 @@ export enum FaceCharacter {
   FuyukawaKagari = '冬川花璃',
   Neuro = 'neuro',
   Kipfel = 'kipfel',
-  Mygo = 'mygo'
+  Mygo = 'mygo',
+  Cat = '猫猫收藏家'
 }
 
 /** 表情类型列表 */
