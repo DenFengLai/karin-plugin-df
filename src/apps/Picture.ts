@@ -45,7 +45,7 @@ export class RandomPictures extends Plugin {
     const type = PictureRegx.exec(e.msg)?.[1]?.toLowerCase()
     if (!type) return false
     const message = await (apiHandlers.find(handler => new RegExp(handler.reg, 'i').test(type))
-    )?.fnc()
+    )?.fnc?.()
 
     if (!_.isEmpty(message)) {
       return e.reply(message, { reply: true })
