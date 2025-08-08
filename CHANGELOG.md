@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/DenFengLai/karin-plugin-df/compare/v1.1.0...v1.1.1) (2025-08-08)
+
+
+### Bug Fixes
+
+* 修复可能导致未定义函数调用的错误 ([0ce843d](https://github.com/DenFengLai/karin-plugin-df/commit/0ce843d0691b5769aa0be930d112a23dd3475d62))
+
 ## [1.1.0](https://github.com/DenFengLai/karin-plugin-df/compare/v1.0.2...v1.1.0) (2025-08-05)
 
 
